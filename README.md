@@ -1,5 +1,5 @@
 # hello-world
-test project
+This is sample project.
 
 List
 * a1
