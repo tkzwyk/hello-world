@@ -1,7 +1,4 @@
-# hello-world
-This is sample project.
+# Hello World Project
 
-List
-* a1
-* a2
-* a3
+[![CircleCI](https://circleci.com/gh/tkzwyk/hello-world.svg?style=shield)](https://circleci.com/gh/tkzwyk/hello-world)
+
