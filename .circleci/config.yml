@@ -6,20 +6,27 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-       - image: circleci/ruby:2.4.1-node-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
+       - image: circleci/ruby:2.4
     steps:
       - checkout
 
+  test:
+    docker:
+      - image: circleci/ruby:2.4
+    steps:
+      - checkout
       - run:
-          name: install dependencies
-          command: echo "Hello world"
+          name: Check ruby version
+          command: ruby --version
+      - run:
+          name: Run ruby script
+          command: ruby hello.rb
 
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
